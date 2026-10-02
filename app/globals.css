@@ -1,0 +1,74 @@
+@import 'next-cloudinary/dist/cld-video-player.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: theme(colors.border);
+  }
+
+  *::selection {
+    background-color: theme(colors.muted.foreground);
+    color: theme(colors.background);
+  }
+
+  body {
+    background-color: theme(colors.background);
+    color: theme(colors.foreground);
+  }
+}
+
+@layer base {
+  /*
+   * Notion-flavoured palette, scoped to the auth & onboarding pages only.
+   * It re-declares the same tokens the landing page uses, so every component
+   * inside picks up the warmer greys and the blue focus ring automatically.
+   */
+  .auth-theme {
+    --background: 0 0% 100%;
+    --foreground: 45 8% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 45 8% 20%;
+    --primary: 211 76% 51%;
+    --primary-foreground: 211 76% 44%;
+    --secondary: 60 5% 91%;
+    --secondary-foreground: 48 3% 41%;
+    --muted: 60 14% 96%;
+    --muted-foreground: 45 2% 46%;
+    --accent: 60 14% 96%;
+    --accent-foreground: 45 8% 20%;
+    --destructive: 0 79% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 60 5% 89%;
+    --input: 60 5% 89%;
+    --ring: 211 76% 51%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  /* Firefox */
+  * {
+    scrollbar-color: theme(colors.secondary.foreground)
+      theme(colors.secondary.DEFAULT);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: theme(width[1.5]);
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: theme(colors.secondary.DEFAULT);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: theme(colors.secondary.foreground);
+    border-radius: theme(borderRadius.full);
+
+    &:hover {
+      background-color: theme(colors.secondary.DEFAULT);
+    }
+  }
+}
